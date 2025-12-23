@@ -1,0 +1,67 @@
+import React, { useContext } from 'react';
+import { LanguageContext } from '../App';
+import DecryptedText from '../components/DecryptedText';
+
+const ProductSection = () => {
+  const { t, language } = useContext(LanguageContext);
+
+  const isRTL = language === 'ar';
+
+  const productCategories = [
+    {
+      id: 'mens',
+      title: t('products.mens'),
+      description: t('products.mensDesc'),
+      icon: '👔'
+    },
+    {
+      id: 'womens',
+      title: t('products.womens'),
+      description: t('products.womensDesc'),
+      icon: '👗'
+    },
+    {
+      id: 'kids',
+      title: t('products.kids'),
+      description: t('products.kidsDesc'),
+      icon: '👶'
+    },
+    {
+      id: 'lifestyle',
+      title: t('products.lifestyle'),
+      description: t('products.lifestyleDesc'),
+      icon: '🏠'
+    }
+  ];
+
+  return (
+    <section id="products" className="products-section">
+      <div className="container">
+        <h2 className="section-title">
+          <DecryptedText
+            text={t('products.title')}
+            animateOn='hover'
+            revealDirection={isRTL ? "right" : "left"}
+          />
+        </h2>
+        <div className="products-grid">
+          {productCategories.map((category) => (
+            <div key={category.id} className="product-card">
+              <div className="product-icon">{category.icon}</div>
+              <h3 className="product-title">
+                <DecryptedText
+                  text={category.title}
+                  animateOn='hover'
+                  revealDirection={isRTL ? "right" : "left"}
+                />
+              </h3>
+              <p className="product-description">{category.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default ProductSection;

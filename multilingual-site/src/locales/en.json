@@ -1,0 +1,50 @@
+{
+  "siteTitle": "Global Store",
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "products": "Products",
+    "contact": "Contact"
+  },
+  "home": {
+    "welcome": "Welcome to Global Store",
+    "subtitle": "Your one-stop shop for quality products"
+  },
+  "about": {
+    "title": "About Us",
+    "content": "We are a global retailer committed to providing high-quality products for everyone. Our mission is to bridge cultures through fashion and lifestyle products."
+  },
+  "products": {
+    "title": "Our Products",
+    "mens": "Men's Collection",
+    "womens": "Women's Collection",
+    "kids": "Kids' Collection",
+    "lifestyle": "Lifestyle Products",
+    "mensDesc": "Trendy and comfortable clothing for men",
+    "womensDesc": "Elegant and fashionable wear for women",
+    "kidsDesc": "Fun and durable clothes for children",
+    "lifestyleDesc": "Home decor and daily essentials"
+  },
+  "contact": {
+    "title": "Contact Us",
+    "email": "Email",
+    "phone": "Phone",
+    "address": "Address",
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "message": "Message",
+      "send": "Send Message"
+    }
+  },
+  "footer": {
+    "copyright": "© 2024 Global Store. All rights reserved."
+  },
+  "error": {
+    "pageNotFound": {
+        "title": "Page Not Found.",
+        "description": "Sorry, Looks like something went wrong, Please navigate back to the home page.",
+        "returnText": "Home"
+    }
+  }
+}
