@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/arabic-eng-POC/static/css/main.b5eb6830.css",
+    "main.js": "/arabic-eng-POC/static/js/main.8996a421.js",
+    "index.html": "/arabic-eng-POC/index.html",
+    "main.b5eb6830.css.map": "/arabic-eng-POC/static/css/main.b5eb6830.css.map",
+    "main.8996a421.js.map": "/arabic-eng-POC/static/js/main.8996a421.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b5eb6830.css",
+    "static/js/main.8996a421.js"
+  ]
+}
