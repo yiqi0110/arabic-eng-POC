@@ -15,7 +15,7 @@ const Header = () => {
       <div className="container">
         <div className="header-content">
           <div className="logo">
-            <Link to="/" className="logo-link">
+            <Link to="/" className={["logo-link", "cursor-target"].join(" ")}>
               <h1>
                 <DecryptedText
                   text={t('siteTitle')}
@@ -29,16 +29,16 @@ const Header = () => {
           <nav className="nav">
             <ul className="nav-list">
               <li className="nav-item">
-                <a href="#home" className="nav-link">{t('nav.home')}</a>
+                <a href="#home" className={["nav-link", "cursor-target"].join(" ")}>{t('nav.home')}</a>
               </li>
               <li className="nav-item">
-                <a href="#about" className="nav-link">{t('nav.about')}</a>
+                <a href="#about" className={["nav-link", "cursor-target"].join(" ")}>{t('nav.about')}</a>
               </li>
               <li className="nav-item">
-                <a href="#products" className="nav-link">{t('nav.products')}</a>
+                <a href="#products" className={["nav-link", "cursor-target"].join(" ")}>{t('nav.products')}</a>
               </li>
               <li className="nav-item">
-                <a href="#contact" className="nav-link">{t('nav.contact')}</a>
+                <a href="#contact" className={["nav-link", "cursor-target"].join(" ")}>{t('nav.contact')}</a>
               </li>
             </ul>
           </nav>

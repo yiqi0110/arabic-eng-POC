@@ -2,6 +2,7 @@ import React, { createContext, useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import TargetCursor from './components/TargetCursor';
 import HomePage from './pages/HomePage';
 import en from './locales/en.json';
 import ar from './locales/ar.json';
@@ -13,7 +14,7 @@ import PageNotFound from './pages/PageNotFound';
 const translations = { en, ar, ja };
 
 // Grab Users browser language
-const userLanguage = localStorage.getItem('language') ?? (navigator.language.substring(0,2) || navigator.userLanguage?.substring(0,2) || "en");
+const userLanguage = localStorage.getItem('language') ?? (navigator.language.substring(0, 2) || navigator.userLanguage?.substring(0, 2) || "en");
 
 // Create context for language
 export const LanguageContext = createContext();
@@ -38,7 +39,7 @@ function App() {
   const t = (key) => {
     const keys = key.split('.');
     let value = translations[language];
-    
+
     for (const k of keys) {
       if (value && value[k] !== undefined) {
         value = value[k];
@@ -51,7 +52,7 @@ function App() {
         return fallbackValue || key;
       }
     }
-    
+
     return value;
   };
 
@@ -59,6 +60,11 @@ function App() {
     <LanguageContext.Provider value={{ language, setLanguage, t }}>
       <Router>
         <div className="app">
+          <TargetCursor
+            spinDuration={2}
+            hideDefaultCursor={true}
+            parallaxOn={true}
+          />
           <Header />
           <main>
             <Routes>

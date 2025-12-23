@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { LanguageContext } from '../App';
-import DecryptedText from '../components/DecryptedText';
+import DecryptedText from './DecryptedText';
 
 const ProductSection = () => {
   const { t, language } = useContext(LanguageContext);
@@ -46,7 +46,7 @@ const ProductSection = () => {
         </h2>
         <div className="products-grid">
           {productCategories.map((category) => (
-            <div key={category.id} className="product-card">
+            <div key={category.id} className={["product-card", "cursor-target"].join(" ")}>
               <div className="product-icon">{category.icon}</div>
               <h3 className="product-title">
                 <DecryptedText

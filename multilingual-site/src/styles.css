@@ -9,6 +9,7 @@ body {
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   line-height: 1.6;
+  background: #f8f9fa;
   color: #333;
   height: 100%;
   display: flex;
@@ -89,7 +90,7 @@ main {
 
 .language-btn:hover {
   border-color: #007bff;
-  background: #f8f9fa;
+  background: #f8f9fab6;
 }
 
 .language-btn.active {
@@ -131,7 +132,6 @@ main {
 /* About Section */
 .about-section {
   padding: 5rem 0;
-  background: #f8f9fa;
 }
 
 .about-content {
@@ -187,7 +187,6 @@ main {
 /* Contact Section */
 .contact-section {
   padding: 5rem 0;
-  background: #f8f9fa;
 }
 
 .contact-content {

@@ -1,13 +1,28 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import { LanguageContext } from '../App';
 import ProductSection from '../components/ProductSection';
 import DecryptedText from '../components/DecryptedText';
+import ScrambledText from '../components/ScrambledText';
 
 const HomePage = () => {
+  const [ scrambleChar, setScrambleChar ] = useState('*');
   const { t, language } = useContext(LanguageContext);
 
   const isRTL = language === 'ar';
-  // const isTTB = language === 'ja'; // TODO: add top-to-bottom for japanese language, maybe...
+
+  useEffect(() => {
+    switch (language) {
+      case 'ar':
+        setScrambleChar('ري');
+        break;
+      case 'ja':
+        setScrambleChar('グス');
+        break;
+      default:
+        setScrambleChar('GS');
+        break;
+    }
+  }, [language])
 
   return (
     <div className="home-page" dir={isRTL ? 'rtl' : 'ltr'}>
@@ -22,7 +37,9 @@ const HomePage = () => {
                 revealDirection={isRTL ? "right" : "left"}
               />
             </h1>
-            <p className="hero-subtitle">{t('home.subtitle')}</p>
+            <p className="hero-subtitle">
+              {t('home.subtitle')}
+            </p>
           </div>
         </div>
       </section>
@@ -38,16 +55,26 @@ const HomePage = () => {
             />
           </h2>
           <div className="about-content">
-            <p>{t('about.content')}</p>
+            {/* <ScrambledText
+              radius={20}
+              duration={1.2}
+              speed={0.5}
+              scrambleChars={scrambleChar}>
+              {t('about.content')}
+            </ScrambledText> */}
+
+            <p>
+              {t('about.content')}
+            </p>
           </div>
         </div>
-      </section>
+      </section >
 
       {/* Products Section */}
-      <ProductSection />
+      < ProductSection />
 
       {/* Contact Section */}
-      <section id="contact" className="contact-section">
+      < section id="contact" className="contact-section" >
         <div className="container">
           <h2 className="section-title">
             <DecryptedText
@@ -75,24 +102,24 @@ const HomePage = () => {
             <form className="contact-form">
               <div className="form-group">
                 <label htmlFor="name">{t('contact.form.name')}</label>
-                <input type="text" id="name" placeholder={t('contact.form.name')} />
+                <input type="text" id="name" placeholder={t('contact.form.name')} className="cursor-target" />
               </div>
               <div className="form-group">
                 <label htmlFor="email">{t('contact.form.email')}</label>
-                <input type="email" id="email" placeholder={t('contact.form.email')} />
+                <input type="email" id="email" placeholder={t('contact.form.email')} className="cursor-target" />
               </div>
               <div className="form-group">
                 <label htmlFor="message">{t('contact.form.message')}</label>
-                <textarea id="message" rows="4" placeholder={t('contact.form.message')}></textarea>
+                <textarea id="message" rows="4" placeholder={t('contact.form.message')} className="cursor-target"></textarea>
               </div>
-              <button type="submit" className="submit-btn">
+              <button type="submit" className="submit-btn cursor-target">
                 {t('contact.form.send')}
               </button>
             </form>
           </div>
         </div>
-      </section>
-    </div>
+      </section >
+    </div >
   );
 };
 

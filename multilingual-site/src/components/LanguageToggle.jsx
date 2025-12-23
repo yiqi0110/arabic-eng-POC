@@ -16,7 +16,7 @@ const LanguageToggle = () => {
         <button
           key={lang.code}
           onClick={() => setLanguage(lang.code)}
-          className={`language-btn ${language === lang.code ? 'active' : ''}`}
+          className={`language-btn cursor-target ${language === lang.code ? 'active' : ''}`}
           aria-label={`Switch to ${lang.name}`}
         >
           <span className="flag">{lang.flag}</span>
