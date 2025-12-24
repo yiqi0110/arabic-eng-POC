@@ -63,6 +63,7 @@ main {
   color: #555;
   font-weight: 500;
   transition: color 0.3s;
+  cursor: none;
 }
 
 .nav-link:hover {
@@ -83,7 +84,7 @@ main {
   border: 2px solid #e0e0e0;
   background: white;
   border-radius: 20px;
-  cursor: pointer;
+  cursor: none;
   transition: all 0.3s;
   font-size: 0.9rem;
 }
@@ -237,6 +238,7 @@ main {
   border-radius: 5px;
   font-size: 1rem;
   transition: border-color 0.3s;
+  cursor: none;
 }
 
 .form-group input:focus,
@@ -253,7 +255,7 @@ main {
   border-radius: 5px;
   font-size: 1rem;
   font-weight: 500;
-  cursor: pointer;
+  cursor: none;
   transition: background 0.3s;
 }
 
