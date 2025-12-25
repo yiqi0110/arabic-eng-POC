@@ -171,7 +171,7 @@ const CardNav = ({
                     </div>
 
                     <div className="logo-container">
-                        <Link to="/#home" className='cursor-target'>
+                        <Link to="/" className='cursor-target'>
                             <DecryptedText
                                 text='Brand Naem'
                                 animateOn='hover'

@@ -40,7 +40,7 @@ const HomePage = () => {
             </h1>
             <p className="hero-subtitle">
               {t('home.subtitle')}
-              <a href="/TestScroll" className="cursor-target">test</a>
+              {/* <a href="/TestScroll" className="cursor-target">test</a> */}
             </p>
           </div>
         </div>

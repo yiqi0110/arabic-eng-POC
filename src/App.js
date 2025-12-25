@@ -71,7 +71,7 @@ function App() {
           <main>
             <Routes>
               <Route path="/" element={<HomePage />} />
-              <Route path="/testScroll" element={<TestScroll />} />
+              {/* <Route path="/testScroll" element={<TestScroll />} /> */}
               <Route path="*" element={<PageNotFound />} />
             </Routes>
           </main>

@@ -27,8 +27,8 @@ const Header = () => {
       bgColor: "#0D0716",
       textColor: "#fff",
       links: [
-        { label: t('nav.about'), ariaLabel: t('nav.about'), href: "#about" },
-        { label: t('nav.contact'), ariaLabel: t('nav.contact'), href: "#contact" }
+        { label: t('nav.about'), ariaLabel: t('nav.about'), href: "/#about" },
+        { label: t('nav.contact'), ariaLabel: t('nav.contact'), href: "/#contact" }
       ]
     },
     {
