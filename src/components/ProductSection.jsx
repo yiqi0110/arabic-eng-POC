@@ -11,26 +11,22 @@ const ProductSection = () => {
     {
       id: 'mens',
       title: t('products.mens'),
-      description: t('products.mensDesc'),
-      icon: '👔'
+      description: t('products.mensDesc')
     },
     {
       id: 'womens',
       title: t('products.womens'),
-      description: t('products.womensDesc'),
-      icon: '👗'
+      description: t('products.womensDesc')
     },
     {
       id: 'kids',
       title: t('products.kids'),
-      description: t('products.kidsDesc'),
-      icon: '👶'
+      description: t('products.kidsDesc')
     },
     {
       id: 'lifestyle',
       title: t('products.lifestyle'),
-      description: t('products.lifestyleDesc'),
-      icon: '🏠'
+      description: t('products.lifestyleDesc')
     }
   ];
 
@@ -47,7 +43,6 @@ const ProductSection = () => {
         <div className="products-grid">
           {productCategories.map((category) => (
             <div key={category.id} className={["product-card", "cursor-target"].join(" ")}>
-              <div className="product-icon">{category.icon}</div>
               <h3 className="product-title">
                 <DecryptedText
                   text={category.title}
