@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/arabic-eng-POC/static/css/main.e6aa91da.css",
-    "main.js": "/arabic-eng-POC/static/js/main.ca70f5eb.js",
+    "main.js": "/arabic-eng-POC/static/js/main.ef99e901.js",
     "index.html": "/arabic-eng-POC/index.html",
     "main.e6aa91da.css.map": "/arabic-eng-POC/static/css/main.e6aa91da.css.map",
-    "main.ca70f5eb.js.map": "/arabic-eng-POC/static/js/main.ca70f5eb.js.map"
+    "main.ef99e901.js.map": "/arabic-eng-POC/static/js/main.ef99e901.js.map"
   },
   "entrypoints": [
     "static/css/main.e6aa91da.css",
-    "static/js/main.ca70f5eb.js"
+    "static/js/main.ef99e901.js"
   ]
 }
