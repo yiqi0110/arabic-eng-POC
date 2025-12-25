@@ -27,8 +27,8 @@ const Header = () => {
       bgColor: "#0D0716",
       textColor: "#fff",
       links: [
-        { label: t('nav.about'), ariaLabel: t('nav.about'), href: "/#about" },
-        { label: t('nav.contact'), ariaLabel: t('nav.contact'), href: "/#contact" }
+        { label: t('nav.about'), ariaLabel: t('nav.about'), href: {mainpath: "/", sub: "about"} },
+        { label: t('nav.contact'), ariaLabel: t('nav.contact'), href: {mainpath: "/" ,sub: "contact"} }
       ]
     },
     {
@@ -47,7 +47,7 @@ const Header = () => {
       bgColor: "#170D27",
       textColor: "#fff",
       links: [
-        { label: "English", ariaLabel: "English", langCode: "en"},
+        { label: "English", ariaLabel: "English", langCode: "en" },
         { label: "العربية", ariaLabel: "العربية", langCode: "ar" },
         { label: "日本語", ariaLabel: "日本語", langCode: "ja" }
       ]
@@ -59,16 +59,16 @@ const Header = () => {
   return (
     <header className="header">
       {/* <div className="container"> */}
-        <div className="header-content">
-          <CardNav
-            items={items}
-            baseColor="#fff"
-            menuColor="#000"
-            buttonBgColor="#111"
-            buttonTextColor="#fff"
-            ease="power3.out"
-          />
-        </div>
+      <div className="header-content">
+        <CardNav
+          items={items}
+          baseColor="#fff"
+          menuColor="#000"
+          buttonBgColor="#111"
+          buttonTextColor="#fff"
+          ease="power3.out"
+        />
+      </div>
       {/* </div> */}
     </header>
     //       <div className="logo">

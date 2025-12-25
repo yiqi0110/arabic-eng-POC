@@ -1,10 +1,38 @@
 import { useContext, useEffect, useLayoutEffect, useRef, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate, useLocation, Link } from 'react-router-dom';
 import { gsap } from 'gsap';
 import './CardNav.css';
 import { LanguageContext } from '../App';
 import DecryptedText from './DecryptedText';
 import LanguageToggle from './LanguageToggle';
+
+function useSmartNavigation() {
+    const navigate = useNavigate();
+    const location = useLocation();
+
+    const smartNavigate = (path, hash = null) => {
+        const isHomePage = location.pathname === '/';
+
+        if (hash) {
+            if (isHomePage) {
+                // On home page, scroll to section
+                const element = document.getElementById(hash);
+                if (element) {
+                    gsap.to(window, { duration: 1, scrollTo: { y: `#${hash}`, offsetY: 120 } });
+                }
+            } else {
+                // Not on home page, navigate to home with hash
+                navigate(`/#${hash}`);
+                // Then let the home page handle the scroll when it loads
+            }
+        } else {
+            // Regular navigation
+            navigate(path);
+        }
+    };
+
+    return smartNavigate;
+}
 
 const CardNav = ({
     logo,
@@ -24,10 +52,9 @@ const CardNav = ({
     const navRef = useRef(null);
     const cardsRef = useRef([]);
     const tlRef = useRef(null);
+    const smartNavigate = useSmartNavigation();
 
     const isRTL = language === 'ar';
-
-    console.log(langRef.current);
 
     const calculateHeight = () => {
         const navEl = navRef.current;
@@ -154,6 +181,15 @@ const CardNav = ({
         }
     }, [isExpanded, isHamburgerOpen])
 
+    const handleSPALinkClick = (destination) => {
+        console.log(destination);
+        gsap.to(window, { duration: 1, scrollTo: { y: destination, offsetY: 120 } });
+    }
+    // document.getElementById("about-navLink")?.addEventListener("click", () => {
+    //     console.log("clicked");
+    //     gsap.to(window, { duration: 1, scrollTo: { y: "#about", offsetY: 120 } });
+    // });
+
     return (
         <div className={`card-nav-container ${className}`}>
             <nav ref={navRef} className={`card-nav ${isExpanded ? 'open' : ''}`} style={{ backgroundColor: baseColor }}>
@@ -171,13 +207,13 @@ const CardNav = ({
                     </div>
 
                     <div className="logo-container">
-                        <Link to="/" className='cursor-target'>
+                        <div onClick={() => smartNavigate('/')} className='cursor-target'>
                             <DecryptedText
                                 text='Brand Naem'
                                 animateOn='hover'
                                 revealDirection={isRTL ? "right" : "left"}
                             />
-                        </Link>
+                        </div>
                     </div>
                 </div>
 
@@ -194,20 +230,34 @@ const CardNav = ({
                                 {item.links?.map((lnk, i) => {
                                     if (lnk.langCode) {
                                         return (
-                                            <span
+                                            <div
                                                 key={`${lnk.langCode}-${i}`}
                                                 className="cursor-target"
                                                 aria-label={`Switch to ${lnk.label}`}
                                                 onClick={() => handleLanguageClick(lnk.langCode)}
                                             >
-                                                {lnk.label}
-                                            </span>
+                                                <DecryptedText
+                                                    text={lnk.label}
+                                                    animateOn='hover'
+                                                    revealDirection={isRTL ? "right" : "left"}
+                                                />
+                                            </div>
                                         )
                                     } else {
                                         return (
-                                            <a key={`${lnk.label}-${i}`} className="nav-card-link cursor-target" href={lnk.href} onClick={toggleMenu} aria-label={lnk.ariaLabel}>
-                                                {lnk.label}
-                                            </a>
+                                            <div
+                                                key={`${lnk.label}-navLink`}
+                                                className="nav-card-link cursor-target"
+                                                // to={lnk.href}
+                                                // onClick={toggleMenu}
+                                                onClick={() => smartNavigate(lnk.href.mainpath, lnk.href.sub)}
+                                                aria-label={lnk.ariaLabel}>
+                                                <DecryptedText
+                                                    text={lnk.label}
+                                                    animateOn='hover'
+                                                    revealDirection={isRTL ? "right" : "left"}
+                                                />
+                                            </div>
                                         )
                                     }
                                 })}
