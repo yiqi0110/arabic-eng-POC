@@ -3,12 +3,15 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import TargetCursor from './components/TargetCursor';
+import CardNav from './components/CardNav';
 import HomePage from './pages/HomePage';
+import TestScroll from './pages/TestScroll';
 import en from './locales/en.json';
 import ar from './locales/ar.json';
 import ja from './locales/ja.json';
 import './styles.css';
 import PageNotFound from './pages/PageNotFound';
+
 
 // Create translations object
 const translations = { en, ar, ja };
@@ -18,7 +21,6 @@ const userLanguage = localStorage.getItem('language') ?? (navigator.language.sub
 
 // Create context for language
 export const LanguageContext = createContext();
-
 
 function App() {
   const [language, setLanguage] = useState(userLanguage);
@@ -69,6 +71,7 @@ function App() {
           <main>
             <Routes>
               <Route path="/" element={<HomePage />} />
+              <Route path="/testScroll" element={<TestScroll />} />
               <Route path="*" element={<PageNotFound />} />
             </Routes>
           </main>
