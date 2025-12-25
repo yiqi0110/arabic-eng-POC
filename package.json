@@ -4,6 +4,7 @@
   "private": true,
   "homepage": "https://yiqi0110.github.io/arabic-eng-POC/",
   "dependencies": {
+    "@gsap/react": "^2.1.2",
     "gsap": "^3.14.2",
     "motion": "^12.23.26",
     "react": "^18.2.0",

@@ -2,27 +2,27 @@ import React, { useContext, useState, useEffect } from 'react';
 import { LanguageContext } from '../App';
 import ProductSection from '../components/ProductSection';
 import DecryptedText from '../components/DecryptedText';
-import ScrambledText from '../components/ScrambledText';
+// import ScrambledText from '../components/ScrambledText';
 
 const HomePage = () => {
-  const [ scrambleChar, setScrambleChar ] = useState('*');
+  // const [scrambleChar, setScrambleChar] = useState('*');
   const { t, language } = useContext(LanguageContext);
 
   const isRTL = language === 'ar';
 
-  useEffect(() => {
-    switch (language) {
-      case 'ar':
-        setScrambleChar('ري');
-        break;
-      case 'ja':
-        setScrambleChar('グス');
-        break;
-      default:
-        setScrambleChar('GS');
-        break;
-    }
-  }, [language])
+  // useEffect(() => {
+  //   switch (language) {
+  //     case 'ar':
+  //       setScrambleChar('ري');
+  //       break;
+  //     case 'ja':
+  //       setScrambleChar('グス');
+  //       break;
+  //     default:
+  //       setScrambleChar('GS');
+  //       break;
+  //   }
+  // }, [language])
 
   return (
     <div className="home-page" dir={isRTL ? 'rtl' : 'ltr'}>
@@ -39,6 +39,7 @@ const HomePage = () => {
             </h1>
             <p className="hero-subtitle">
               {t('home.subtitle')}
+              <a href="/TestScroll" className="cursor-target">test</a>
             </p>
           </div>
         </div>
@@ -52,16 +53,17 @@ const HomePage = () => {
               text={t('about.title')}
               animateOn='hover'
               revealDirection={isRTL ? "right" : "left"}
+              speed={150}
             />
           </h2>
           <div className="about-content">
             {/* <ScrambledText
               radius={20}
               duration={1.2}
-              speed={0.5}
+              speed={.25}
               scrambleChars={scrambleChar}>
               {t('about.content')}
-            </ScrambledText> */}
+            </ScrambledText> POSSIBLE UPGRADE FOR LATER. */}
 
             <p>
               {t('about.content')}
