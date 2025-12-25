@@ -21,19 +21,19 @@ main {
 }
 
 section {
-  height: 100vh;
+  height: 100vh; /* TODO: this looks fine on pc but on mobile it does not, so figure it out later*/
+  align-content: center;
 }
 
 .container {
   max-width: 1200px;
-  margin: 0 auto;
+  margin: auto;
   padding: 0 20px;
+  width: 75%;
 }
 
 /* Header Styles */
 .header {
-  background: white;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -164,13 +164,13 @@ section {
   border-radius: 10px;
   padding: 2rem;
   text-align: center;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .product-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
 .product-icon {
@@ -233,6 +233,7 @@ section {
 .form-group label {
   font-weight: 500;
   color: #333;
+  cursor: none;
 }
 
 .form-group input,
@@ -288,34 +289,50 @@ section {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+  /* .container {
+    max-width: 1200px;
+    border: 3px solid #73AD21;
+    margin: auto;
+    padding: 0 20px;
+    width: 85%;
+  } */
+
   .header-content {
     flex-direction: column;
     gap: 1rem;
   }
-  
+
   .nav-list {
     gap: 1rem;
   }
-  
+
   .hero-title {
     font-size: 2rem;
   }
-  
+
   .contact-content {
     grid-template-columns: 1fr;
   }
-  
+
   .products-grid {
     grid-template-columns: 1fr;
   }
 }
 
 @media (max-width: 480px) {
+  /* .container {
+    max-width: 1200px;
+    border: 3px solid #73AD21;
+    margin: auto;
+    padding: 0 20px;
+    width: 95%;
+  } */
+
   .language-toggle {
     flex-direction: column;
     width: 100%;
   }
-  
+
   .language-btn {
     width: 100%;
     justify-content: center;

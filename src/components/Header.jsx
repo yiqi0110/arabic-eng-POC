@@ -47,9 +47,9 @@ const Header = () => {
       bgColor: "#170D27",
       textColor: "#fff",
       links: [
-        { label: "English", ariaLabel: "English" },
-        { label: "العربية", ariaLabel: "العربية" },
-        { label: "日本語", ariaLabel: "日本語" }
+        { label: "English", ariaLabel: "English", langCode: "en"},
+        { label: "العربية", ariaLabel: "العربية", langCode: "ar" },
+        { label: "日本語", ariaLabel: "日本語", langCode: "ja" }
       ]
     }
   ];
@@ -58,7 +58,7 @@ const Header = () => {
 
   return (
     <header className="header">
-      <div className="container">
+      {/* <div className="container"> */}
         <div className="header-content">
           <CardNav
             items={items}
@@ -69,7 +69,7 @@ const Header = () => {
             ease="power3.out"
           />
         </div>
-      </div>
+      {/* </div> */}
     </header>
     //       <div className="logo">
     //         <Link to="/" className={["logo-link", "cursor-target"].join(" ")}>

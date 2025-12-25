@@ -1,4 +1,4 @@
-import { useContext, useLayoutEffect, useRef, useState } from 'react';
+import { useContext, useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { gsap } from 'gsap';
 import './CardNav.css';
@@ -17,14 +17,17 @@ const CardNav = ({
     buttonBgColor,
     buttonTextColor
 }) => {
-    const { t, language } = useContext(LanguageContext);
+    const { t, language, setLanguage } = useContext(LanguageContext);
     const [isHamburgerOpen, setIsHamburgerOpen] = useState(false);
     const [isExpanded, setIsExpanded] = useState(false);
+    const langRef = useRef(language);
     const navRef = useRef(null);
     const cardsRef = useRef([]);
     const tlRef = useRef(null);
 
     const isRTL = language === 'ar';
+
+    console.log(langRef.current);
 
     const calculateHeight = () => {
         const navEl = navRef.current;
@@ -122,6 +125,7 @@ const CardNav = ({
 
     const toggleMenu = () => {
         const tl = tlRef.current;
+        // console.log(isExpanded, isHamburgerOpen, tl)
         if (!tl) return;
         if (!isExpanded) {
             setIsHamburgerOpen(true);
@@ -137,6 +141,18 @@ const CardNav = ({
     const setCardRef = i => el => {
         if (el) cardsRef.current[i] = el;
     };
+
+    const handleLanguageClick = (langCode) => {
+        toggleMenu();
+        langRef.current = langCode;
+        return false;
+    }
+
+    useEffect(() => {
+        if ((language !== langRef) && isExpanded === false && isHamburgerOpen === false) {
+            setLanguage(langRef.current);
+        }
+    }, [isExpanded, isHamburgerOpen])
 
     return (
         <div className={`card-nav-container ${className}`}>
@@ -155,7 +171,7 @@ const CardNav = ({
                     </div>
 
                     <div className="logo-container">
-                        <Link to="/" className='cursor-target'>
+                        <Link to="/#home" className='cursor-target'>
                             <DecryptedText
                                 text='Brand Naem'
                                 animateOn='hover'
@@ -175,11 +191,26 @@ const CardNav = ({
                         >
                             <div className="nav-card-label">{item.label}</div>
                             <div className="nav-card-links">
-                                {item.links?.map((lnk, i) => (
-                                    <a key={`${lnk.label}-${i}`} className="nav-card-link cursor-target" href={lnk.href} aria-label={lnk.ariaLabel}>
-                                        {lnk.label}
-                                    </a>
-                                ))}
+                                {item.links?.map((lnk, i) => {
+                                    if (lnk.langCode) {
+                                        return (
+                                            <span
+                                                key={`${lnk.langCode}-${i}`}
+                                                className="cursor-target"
+                                                aria-label={`Switch to ${lnk.label}`}
+                                                onClick={() => handleLanguageClick(lnk.langCode)}
+                                            >
+                                                {lnk.label}
+                                            </span>
+                                        )
+                                    } else {
+                                        return (
+                                            <a key={`${lnk.label}-${i}`} className="nav-card-link cursor-target" href={lnk.href} onClick={toggleMenu} aria-label={lnk.ariaLabel}>
+                                                {lnk.label}
+                                            </a>
+                                        )
+                                    }
+                                })}
                             </div>
                         </div>
                     ))}
