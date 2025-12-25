@@ -10,6 +10,7 @@ const HomePage = () => {
 
   const isRTL = language === 'ar';
 
+ 
   // useEffect(() => {
   //   switch (language) {
   //     case 'ar':
@@ -53,7 +54,7 @@ const HomePage = () => {
               text={t('about.title')}
               animateOn='hover'
               revealDirection={isRTL ? "right" : "left"}
-              speed={150}
+              speed={t('about.title').length < 5 ? 150 : 50}
             />
           </h2>
           <div className="about-content">

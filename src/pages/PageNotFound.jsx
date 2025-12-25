@@ -15,7 +15,7 @@ const PageNotFound = () => {
           <div className="hero-content">
             <h1 className="hero-title">{t('error.pageNotFound.title')}</h1>
             <p className="hero-subtitle">{t('error.pageNotFound.description')}</p>
-            <Link to="/">{t('error.pageNotFound.returnText')}</Link>
+            <Link to="/" className='cursor-target'>{t('error.pageNotFound.returnText')}</Link>
           </div>
         </div>
       </section>
