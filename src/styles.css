@@ -16,6 +16,42 @@ body {
   flex-direction: column;
 }
 
+/* start new */
+.home-page {
+  position: relative;
+  min-height: 100vh;
+}
+
+.snap-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-section {
+  background: transparent;
+}
+
+.about-section, .contact-section {
+  background: rgba(10, 25, 41, 0.7);
+  backdrop-filter: blur(5px);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Ensure proper z-index stacking */
+.hero-content, .about-content, .contact-content {
+  position: relative;
+  z-index: 2;
+}
+/* end new */
+
 main {
   flex: 1;
 }
@@ -145,7 +181,7 @@ section {
   text-align: center;
   font-size: 1.1rem;
   line-height: 1.8;
-  color: #555;
+  color: white;
 }
 
 /* Products Section */
@@ -209,13 +245,13 @@ section {
 }
 
 .contact-item h3 {
-  color: #333;
+  color: #000;
   margin-bottom: 0.5rem;
   font-size: 1.2rem;
 }
 
 .contact-item p {
-  color: #666;
+  color: #c5c4c4;
 }
 
 .contact-form {
@@ -232,7 +268,7 @@ section {
 
 .form-group label {
   font-weight: 500;
-  color: #333;
+  color: #000;
   cursor: none;
 }
 

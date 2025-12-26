@@ -1,5 +1,5 @@
 import React, { createContext, useState, useEffect } from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { HashRouter as Router, Route, Routes } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import TargetCursor from './components/TargetCursor';
@@ -60,7 +60,8 @@ function App() {
 
   return (
     <LanguageContext.Provider value={{ language, setLanguage, t }}>
-      <Router basename={process.env.PUBLIC_URL}>
+      {/* <Router basename={process.env.PUBLIC_URL}> */}
+      <Router>
         <div className="app">
           <TargetCursor
             spinDuration={2}

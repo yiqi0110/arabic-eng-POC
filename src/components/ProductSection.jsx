@@ -31,7 +31,7 @@ const ProductSection = () => {
   ];
 
   return (
-    <section id="products" className="products-section">
+    <section id="products" className="products-section snap-section">
       <div className="container">
         <h2 className="section-title">
           <DecryptedText
