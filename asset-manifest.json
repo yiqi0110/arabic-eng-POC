@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/arabic-eng-POC/static/css/main.94fa6c64.css",
-    "main.js": "/arabic-eng-POC/static/js/main.782eef4f.js",
+    "main.js": "/arabic-eng-POC/static/js/main.7dc00582.js",
     "static/media/hangers-1850082_1920.jpg": "/arabic-eng-POC/static/media/hangers-1850082_1920.7d99ce3625a7e16c20e5.jpg",
     "static/media/lifestyle-2398434759384.jpg": "/arabic-eng-POC/static/media/lifestyle-2398434759384.b9db3334659caab3d4ce.jpg",
     "static/media/dubai-5029018_1280.jpg": "/arabic-eng-POC/static/media/dubai-5029018_1280.9c16068e46cdc4bd9dad.jpg",
@@ -9,10 +9,10 @@
     "static/media/kids-29834734.jpg": "/arabic-eng-POC/static/media/kids-29834734.f1d395b157dc8ef4cab9.jpg",
     "index.html": "/arabic-eng-POC/index.html",
     "main.94fa6c64.css.map": "/arabic-eng-POC/static/css/main.94fa6c64.css.map",
-    "main.782eef4f.js.map": "/arabic-eng-POC/static/js/main.782eef4f.js.map"
+    "main.7dc00582.js.map": "/arabic-eng-POC/static/js/main.7dc00582.js.map"
   },
   "entrypoints": [
     "static/css/main.94fa6c64.css",
-    "static/js/main.782eef4f.js"
+    "static/js/main.7dc00582.js"
   ]
 }
