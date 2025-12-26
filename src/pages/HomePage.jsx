@@ -6,13 +6,15 @@ import { LanguageContext } from '../App';
 import ProductSection from '../components/ProductSection';
 import DecryptedText from '../components/DecryptedText';
 import bgImage from '../assets/hangers-1850082_1920.jpg';
+import mainImage from '../assets/main-23908470245.jpg';
+import aboutImage from '../assets/office-230498230445.jpg';
 
 const HomePage = () => {
   const { t, language } = useContext(LanguageContext);
   const homeRef = useRef(null);
   const containerRef = useRef(null);
   const parallaxRef = useRef(null);
-  
+
   gsap.registerPlugin(ScrollTrigger);
   gsap.defaults({ ease: "none", duration: 2 });
 
@@ -22,9 +24,9 @@ const HomePage = () => {
   useGSAP(() => {
     // Text slide-in animation on page load
     const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
-    
+
     tl.fromTo("#home-hero-title",
-      { 
+      {
         xPercent: isRTL ? 150 : -150,
         opacity: 0,
         scale: 0.8
@@ -37,21 +39,21 @@ const HomePage = () => {
         delay: 0.3
       }
     )
-    .fromTo("#home-hero-desc",
-      {
-        xPercent: isRTL ? 100 : -100,
-        opacity: 0,
-        y: 30
-      },
-      {
-        xPercent: 0,
-        opacity: 1,
-        y: 0,
-        duration: 1,
-        stagger: 0.1
-      },
-      "-=0.8"
-    );
+      .fromTo("#home-hero-desc",
+        {
+          xPercent: isRTL ? 100 : -100,
+          opacity: 0,
+          y: 30
+        },
+        {
+          xPercent: 0,
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          stagger: 0.1
+        },
+        "-=0.8"
+      );
 
     // // Pulsing animation for hero text
     // gsap.to("#home-hero-title", {
@@ -67,22 +69,22 @@ const HomePage = () => {
 
   // 2. SNAPPING SMOOTH SECTIONS WITH PARALLAX BACKGROUND
   useGSAP(() => {
-    // Setup parallax background
-    gsap.to(parallaxRef.current, {
-      backgroundPosition: isRTL ? "100% 0%" : "0% 0%",
-      ease: "none",
-      scrollTrigger: {
-        trigger: containerRef.current,
-        start: "top top",
-        end: "bottom bottom",
-        scrub: true,
-        invalidateOnRefresh: true
-      }
-    });
+    // // Setup parallax background
+    // gsap.to(parallaxRef.current, {
+    //   backgroundPosition: isRTL ? "100% 0%" : "0% 0%",
+    //   ease: "none",
+    //   scrollTrigger: {
+    //     trigger: containerRef.current,
+    //     start: "top top",
+    //     end: "bottom bottom",
+    //     scrub: true,
+    //     invalidateOnRefresh: true
+    //   }
+    // });
 
     // Create snap sections for About, Products, Contact
     const sections = gsap.utils.toArray(".snap-section");
-    
+
     sections.forEach((section, index) => {
       // Each section gets a unique animation
       gsap.fromTo(section,
@@ -115,9 +117,9 @@ const HomePage = () => {
       // Add subtle background color shift between sections
       if (section.id) {
         gsap.to(parallaxRef.current, {
-          backgroundColor: index === 0 ? "#0a1929" : 
-                         index === 1 ? "#1a2b3a" : 
-                         index === 2 ? "#2c3e50" : "#34495e",
+          backgroundColor: index === 0 ? "#0a1929" :
+            index === 1 ? "#1a2b3a" :
+              index === 2 ? "#2c3e50" : "#34495e",
           duration: 1,
           scrollTrigger: {
             trigger: section,
@@ -170,10 +172,10 @@ const HomePage = () => {
 
     // Contact section animations
     gsap.fromTo(".contact-item",
-      { 
+      {
         x: isRTL ? 50 : -50,
         opacity: 0,
-        stagger: 0.2 
+        stagger: 0.2
       },
       {
         x: 0,
@@ -189,10 +191,10 @@ const HomePage = () => {
 
     // Form elements animation
     gsap.fromTo(".form-group",
-      { 
+      {
         y: 30,
         opacity: 0,
-        stagger: 0.1 
+        stagger: 0.1
       },
       {
         y: 0,
@@ -209,40 +211,45 @@ const HomePage = () => {
   }, { dependencies: [language] });
 
   // Add parallax background styles
-  const parallaxStyle = {
-    position: 'fixed',
-    top: 0,
-    left: 0,
-    width: '100%',
-    height: '100%',
-    backgroundImage: `url(${bgImage})`,
-    backgroundSize: 'cover',
-    backgroundPosition: isRTL ? '100% 0%' : '0% 0%',
-    backgroundAttachment: 'fixed',
-    zIndex: -1,
-    opacity: 0.15,
-    filter: 'blur(1px) brightness(0.8)'
-  };
+  // const parallaxStyle = {
+  //   position: 'fixed',
+  //   top: 0,
+  //   left: 0,
+  //   width: '100%',
+  //   height: '100%',
+  //   backgroundImage: `url(${bgImage})`,
+  //   backgroundSize: 'cover',
+  //   backgroundPosition: isRTL ? '100% 0%' : '0% 0%',
+  //   backgroundAttachment: 'fixed',
+  //   zIndex: -1,
+  //   opacity: 0.15,
+  //   filter: 'blur(1px) brightness(0.8)'
+  // };
 
   return (
     <div className="home-page" dir={isRTL ? 'rtl' : 'ltr'} ref={containerRef}>
       {/* Parallax Background */}
-      <div id="parallaxBG" ref={parallaxRef} style={parallaxStyle} />
-      
+      {/* <div id="parallaxBG" ref={parallaxRef} style={parallaxStyle} /> */}
+
       {/* Hero Section */}
       <section ref={homeRef} id="home" className="hero-section snap-section">
         <div className="container">
           <div className="hero-content">
-            <h1 className="hero-title" id="home-hero-title">
-              <DecryptedText
-                text={t('home.welcome')}
-                animateOn='hover'
-                revealDirection={isRTL ? "right" : "left"}
-              />
-            </h1>
-            <p className="hero-subtitle" id="home-hero-desc">
-              {t('home.subtitle')}
-            </p>
+            <div id="main-img-container">
+              <img id="main-img" src={mainImage}></img>
+            </div>
+            <div id="main-text-container">
+              <h1 className="hero-title" id="home-hero-title">
+                <DecryptedText
+                  text={t('home.welcome')}
+                  animateOn='hover'
+                  revealDirection={isRTL ? "right" : "left"}
+                />
+              </h1>
+              <p className="hero-subtitle" id="home-hero-desc">
+                {t('home.subtitle')}
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -250,6 +257,9 @@ const HomePage = () => {
       {/* About Section */}
       <section id="about" className="about-section snap-section">
         <div className="container">
+          <div id="about-img-container">
+            <img id="about-img" src={aboutImage}></img>
+          </div>
           <h2 className="section-title">
             <DecryptedText
               text={t('about.title')}
