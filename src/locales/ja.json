@@ -1,5 +1,5 @@
 {
-  "siteTitle": "グローバルストア",
+  "siteTitle": "Brand Naem",
   "nav": {
     "home": "ホーム",
     "about": "会社概要",
@@ -7,7 +7,7 @@
     "contact": "お問い合わせ"
   },
   "home": {
-    "welcome": "グローバルストアへようこそ",
+    "welcome": "Brand Naemへようこそ",
     "subtitle": "高品質製品のワンストップショップ"
   },
   "about": {
@@ -38,7 +38,7 @@
     }
   },
   "footer": {
-    "copyright": "© 2024 グローバルストア。全著作権所有。"
+    "copyright": "© 2024 Brand Naem。全著作権所有。"
   },
   "error": {
     "pageNotFound": {

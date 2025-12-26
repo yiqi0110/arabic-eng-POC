@@ -1,5 +1,5 @@
 {
-  "siteTitle": "المتجر العالمي",
+  "siteTitle": "Brand Naem",
   "nav": {
     "home": "الرئيسية",
     "about": "معلومات عنا",
@@ -7,7 +7,7 @@
     "contact": "اتصل بنا"
   },
   "home": {
-    "welcome": "مرحباً بكم في المتجر العالمي",
+    "welcome": "مرحباً بكم في Brand Naem",
     "subtitle": "متجركم الشامل لمنتجات عالية الجودة"
   },
   "about": {
@@ -38,7 +38,7 @@
     }
   },
   "footer": {
-    "copyright": "© ٢٠٢٤ المتجر العالمي. جميع الحقوق محفوظة."
+    "copyright": "© ٢٠٢٤ Brand Naem. جميع الحقوق محفوظة."
   },
   "error": {
     "pageNotFound": {

@@ -1,5 +1,5 @@
 {
-  "siteTitle": "Global Store",
+  "siteTitle": "Brand Naem",
   "nav": {
     "home": "Home",
     "about": "About",
@@ -7,7 +7,7 @@
     "contact": "Contact"
   },
   "home": {
-    "welcome": "Welcome to Global Store",
+    "welcome": "Welcome to Brand Naem",
     "subtitle": "Your one-stop shop for quality products"
   },
   "about": {
@@ -38,7 +38,7 @@
     }
   },
   "footer": {
-    "copyright": "© 2024 Global Store. All rights reserved."
+    "copyright": "© 2024 Brand Naem. All rights reserved."
   },
   "error": {
     "pageNotFound": {

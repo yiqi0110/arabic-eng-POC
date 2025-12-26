@@ -32,7 +32,7 @@ const Header = () => {
       ]
     },
     {
-      label: t('nav.products'),
+      label: t('nav.products') + ", Coming soon",
       bgColor: "#271E37",
       textColor: "#fff",
       links: [

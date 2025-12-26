@@ -238,8 +238,9 @@ const CardNav = ({
                                                 // to={lnk.href}
                                                 // onClick={toggleMenu}
                                                 onClick={() => {
-                                                    console.log(lnk.href)
-                                                    smartNavigate(lnk.href.mainpath, lnk.href.sub)
+                                                    if (!lnk.href) return;
+                                                    if (!lnk.href.mainpath && !lnk.href.sub) return;
+                                                    smartNavigate(lnk.href.mainpath, lnk.href.sub);
                                                 }}
                                                 aria-label={lnk.ariaLabel}>
                                                 <DecryptedText
