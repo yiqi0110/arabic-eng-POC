@@ -1,18 +1,20 @@
 {
   "files": {
-    "main.css": "/arabic-eng-POC/static/css/main.94fa6c64.css",
-    "main.js": "/arabic-eng-POC/static/js/main.7dc00582.js",
+    "main.css": "/arabic-eng-POC/static/css/main.c149b1af.css",
+    "main.js": "/arabic-eng-POC/static/js/main.b5eec1a3.js",
+    "static/media/main-23908470245.jpg": "/arabic-eng-POC/static/media/main-23908470245.cb2648610f1072494766.jpg",
+    "static/media/office-230498230445.jpg": "/arabic-eng-POC/static/media/office-230498230445.37b1b8285a467539bbca.jpg",
     "static/media/hangers-1850082_1920.jpg": "/arabic-eng-POC/static/media/hangers-1850082_1920.7d99ce3625a7e16c20e5.jpg",
     "static/media/lifestyle-2398434759384.jpg": "/arabic-eng-POC/static/media/lifestyle-2398434759384.b9db3334659caab3d4ce.jpg",
     "static/media/dubai-5029018_1280.jpg": "/arabic-eng-POC/static/media/dubai-5029018_1280.9c16068e46cdc4bd9dad.jpg",
     "static/media/men-4842771_1280.jpg": "/arabic-eng-POC/static/media/men-4842771_1280.4f993839a025a37cccbb.jpg",
     "static/media/kids-29834734.jpg": "/arabic-eng-POC/static/media/kids-29834734.f1d395b157dc8ef4cab9.jpg",
     "index.html": "/arabic-eng-POC/index.html",
-    "main.94fa6c64.css.map": "/arabic-eng-POC/static/css/main.94fa6c64.css.map",
-    "main.7dc00582.js.map": "/arabic-eng-POC/static/js/main.7dc00582.js.map"
+    "main.c149b1af.css.map": "/arabic-eng-POC/static/css/main.c149b1af.css.map",
+    "main.b5eec1a3.js.map": "/arabic-eng-POC/static/js/main.b5eec1a3.js.map"
   },
   "entrypoints": [
-    "static/css/main.94fa6c64.css",
-    "static/js/main.7dc00582.js"
+    "static/css/main.c149b1af.css",
+    "static/js/main.b5eec1a3.js"
   ]
 }
