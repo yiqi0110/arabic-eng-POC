@@ -6,9 +6,28 @@ import { LanguageContext } from '../App';
 import DecryptedText from './DecryptedText';
 import LanguageToggle from './LanguageToggle';
 
-function useSmartNavigation() {
+const CardNav = ({
+    logo,
+    logoAlt = 'Logo',
+    items,
+    className = '',
+    ease = 'power3.out',
+    baseColor = '#fff',
+    menuColor,
+    buttonBgColor,
+    buttonTextColor
+}) => {
     const navigate = useNavigate();
     const location = useLocation();
+    const { t, language, setLanguage } = useContext(LanguageContext);
+    const [isHamburgerOpen, setIsHamburgerOpen] = useState(false);
+    const [isExpanded, setIsExpanded] = useState(false);
+    const langRef = useRef(language);
+    const navRef = useRef(null);
+    const cardsRef = useRef([]);
+    const tlRef = useRef(null);
+
+    const isRTL = language === 'ar';
 
     const smartNavigate = (path, hash = null) => {
         const isHomePage = location.pathname === '/';
@@ -17,7 +36,9 @@ function useSmartNavigation() {
             if (isHomePage) {
                 // On home page, scroll to section
                 const element = document.getElementById(hash);
+                console.log(hash, element)
                 if (element) {
+                    toggleMenu();
                     gsap.to(window, { duration: 1, scrollTo: { y: `#${hash}`, offsetY: 120 } });
                 }
             } else {
@@ -30,31 +51,6 @@ function useSmartNavigation() {
             navigate(path);
         }
     };
-
-    return smartNavigate;
-}
-
-const CardNav = ({
-    logo,
-    logoAlt = 'Logo',
-    items,
-    className = '',
-    ease = 'power3.out',
-    baseColor = '#fff',
-    menuColor,
-    buttonBgColor,
-    buttonTextColor
-}) => {
-    const { t, language, setLanguage } = useContext(LanguageContext);
-    const [isHamburgerOpen, setIsHamburgerOpen] = useState(false);
-    const [isExpanded, setIsExpanded] = useState(false);
-    const langRef = useRef(language);
-    const navRef = useRef(null);
-    const cardsRef = useRef([]);
-    const tlRef = useRef(null);
-    const smartNavigate = useSmartNavigation();
-
-    const isRTL = language === 'ar';
 
     const calculateHeight = () => {
         const navEl = navRef.current;
@@ -181,15 +177,6 @@ const CardNav = ({
         }
     }, [isExpanded, isHamburgerOpen])
 
-    const handleSPALinkClick = (destination) => {
-        console.log(destination);
-        gsap.to(window, { duration: 1, scrollTo: { y: destination, offsetY: 120 } });
-    }
-    // document.getElementById("about-navLink")?.addEventListener("click", () => {
-    //     console.log("clicked");
-    //     gsap.to(window, { duration: 1, scrollTo: { y: "#about", offsetY: 120 } });
-    // });
-
     return (
         <div className={`card-nav-container ${className}`}>
             <nav ref={navRef} className={`card-nav ${isExpanded ? 'open' : ''}`} style={{ backgroundColor: baseColor }}>
@@ -250,7 +237,10 @@ const CardNav = ({
                                                 className="nav-card-link cursor-target"
                                                 // to={lnk.href}
                                                 // onClick={toggleMenu}
-                                                onClick={() => smartNavigate(lnk.href.mainpath, lnk.href.sub)}
+                                                onClick={() => {
+                                                    console.log(lnk.href)
+                                                    smartNavigate(lnk.href.mainpath, lnk.href.sub)
+                                                }}
                                                 aria-label={lnk.ariaLabel}>
                                                 <DecryptedText
                                                     text={lnk.label}

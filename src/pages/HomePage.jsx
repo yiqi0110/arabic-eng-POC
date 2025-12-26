@@ -1,4 +1,7 @@
 import React, { useContext, useState, useEffect } from 'react';
+// import { useGSAP } from "@gsap/react";
+// import { gsap } from "gsap";
+// import ScrollTrigger from 'gsap/src/ScrollTrigger';
 import { LanguageContext } from '../App';
 import ProductSection from '../components/ProductSection';
 import DecryptedText from '../components/DecryptedText';
@@ -8,8 +11,29 @@ const HomePage = () => {
   // const [scrambleChar, setScrambleChar] = useState('*');
   const { t, language } = useContext(LanguageContext);
 
+  // gsap.registerPlugin(ScrollTrigger);
+  // gsap.defaults({ease: "none", duration: 2});
+
   const isRTL = language === 'ar';
 
+  // useGSAP(() => {
+    // const tl = gsap.timeline();
+
+    // tl.from("#home", {xPercent: -100})
+    // .from("#about", {xPercent: 100})
+    // .from("#products", {yPercent: -100})
+    // .from("#contact", {yPercent: 100})
+    
+    // ScrollTrigger.create({
+    //   animation: tl,
+    //   trigger: ".home-page",
+    //   start: "top top",
+    //   end: "+=4000",
+    //   scrub: true,
+    //   pin: true,
+    //   anticipatePin: 1
+    // })
+  // }, [])
  
   // useEffect(() => {
   //   switch (language) {
