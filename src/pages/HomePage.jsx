@@ -5,6 +5,7 @@ import ScrollTrigger from 'gsap/src/ScrollTrigger';
 import { LanguageContext } from '../App';
 import ProductSection from '../components/ProductSection';
 import DecryptedText from '../components/DecryptedText';
+import bgImage from '../assets/hangers-1850082_1920.jpg';
 
 const HomePage = () => {
   const { t, language } = useContext(LanguageContext);
@@ -143,7 +144,8 @@ const HomePage = () => {
         ease: "power3.inOut"
       },
       start: "top top",
-      end: "max"
+      end: "max",
+      markers: true
     });
 
   }, { scope: containerRef, dependencies: [language] });
@@ -213,7 +215,7 @@ const HomePage = () => {
     left: 0,
     width: '100%',
     height: '100%',
-    backgroundImage: 'require(../assets/hangers-1850082_1920.jpg)',
+    backgroundImage: `url(${bgImage})`,
     backgroundSize: 'cover',
     backgroundPosition: isRTL ? '100% 0%' : '0% 0%',
     backgroundAttachment: 'fixed',
