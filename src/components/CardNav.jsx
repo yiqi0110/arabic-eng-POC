@@ -36,7 +36,6 @@ const CardNav = ({
             if (isHomePage) {
                 // On home page, scroll to section
                 const element = document.getElementById(hash);
-                console.log(hash, element)
                 if (element) {
                     toggleMenu();
                     gsap.to(window, { duration: 1, scrollTo: { y: `#${hash}`, offsetY: 120 } });
