@@ -145,7 +145,7 @@ const HomePage = () => {
       },
       start: "top top",
       end: "max",
-      markers: true
+      // markers: true
     });
 
   }, { scope: containerRef, dependencies: [language] });
