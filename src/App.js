@@ -60,7 +60,7 @@ function App() {
 
   return (
     <LanguageContext.Provider value={{ language, setLanguage, t }}>
-      <Router>
+      <Router basename={process.env.PUBLIC_URL}>
         <div className="app">
           <TargetCursor
             spinDuration={2}
@@ -70,7 +70,7 @@ function App() {
           <Header />
           <main>
             <Routes>
-              <Route path="/" element={<HomePage />} />
+              <Route index element={<HomePage />} />
               {/* <Route path="/testScroll" element={<TestScroll />} /> */}
               <Route path="*" element={<PageNotFound />} />
             </Routes>

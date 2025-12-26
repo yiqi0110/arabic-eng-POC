@@ -1,7 +1,7 @@
 {
   "name": "multilingual-site",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "homepage": "https://yiqi0110.github.io/arabic-eng-POC/",
   "dependencies": {
     "@gsap/react": "^2.1.2",
@@ -14,7 +14,7 @@
   },
   "scripts": {
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build && cp ./build/index.html ./build/404.html",
+    "deploy": "gh-pages -d build && cp ./public/index.html ./public/404.html",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
