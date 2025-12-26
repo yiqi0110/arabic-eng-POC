@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/arabic-eng-POC/static/css/main.c149b1af.css",
-    "main.js": "/arabic-eng-POC/static/js/main.b5eec1a3.js",
+    "main.css": "/arabic-eng-POC/static/css/main.a0940425.css",
+    "main.js": "/arabic-eng-POC/static/js/main.e2f9e800.js",
     "static/media/main-23908470245.jpg": "/arabic-eng-POC/static/media/main-23908470245.cb2648610f1072494766.jpg",
     "static/media/office-230498230445.jpg": "/arabic-eng-POC/static/media/office-230498230445.37b1b8285a467539bbca.jpg",
     "static/media/hangers-1850082_1920.jpg": "/arabic-eng-POC/static/media/hangers-1850082_1920.7d99ce3625a7e16c20e5.jpg",
@@ -10,11 +10,11 @@
     "static/media/men-4842771_1280.jpg": "/arabic-eng-POC/static/media/men-4842771_1280.4f993839a025a37cccbb.jpg",
     "static/media/kids-29834734.jpg": "/arabic-eng-POC/static/media/kids-29834734.f1d395b157dc8ef4cab9.jpg",
     "index.html": "/arabic-eng-POC/index.html",
-    "main.c149b1af.css.map": "/arabic-eng-POC/static/css/main.c149b1af.css.map",
-    "main.b5eec1a3.js.map": "/arabic-eng-POC/static/js/main.b5eec1a3.js.map"
+    "main.a0940425.css.map": "/arabic-eng-POC/static/css/main.a0940425.css.map",
+    "main.e2f9e800.js.map": "/arabic-eng-POC/static/js/main.e2f9e800.js.map"
   },
   "entrypoints": [
-    "static/css/main.c149b1af.css",
-    "static/js/main.b5eec1a3.js"
+    "static/css/main.a0940425.css",
+    "static/js/main.e2f9e800.js"
   ]
 }
